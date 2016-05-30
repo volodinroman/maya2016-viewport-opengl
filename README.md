@@ -3,7 +3,7 @@
 This class is an example of a user defined interactive tool, that simplifies a viewport callbacks creation process for drawing OpenGL primitives and filtering user actions.
 
 ####How it works:
-ViewportPainter class contains two methods that are responsible for initialization and uninitialization of a viewport redrawing callbacks as well as eventFilters for Maya main window. 
+ViewportPainter class contains two methods that are responsible for initialization and uninitialization of a viewport redrawing callbacks as well as for installing eventFilters for Maya main window. 
 
 When a viewport callback is initialized it calls "Update" method for every refresh of the view, after the scene is drawn but before any 2d adornments are drawn.
 
