@@ -1,5 +1,13 @@
 from ViewportPainter import *
 
+'''
+This is an example of the implementation of a custom interactive tool.
+The example creates a context where a user draws lines on a surface which will be converted into a lofted polygonal mesh.
+When you initialize an instance of "Example" class, press CTRL and then Left Mouse Button to start drawing curves on a surface. 
+As soon as you release Left Mouse Button it will create a curve. 
+Draw several curves and only then release CTRL key to get a lofted polyMesh.
+'''
+
 class Example(ViewportPainter):
     def __init__(self):
         
@@ -18,6 +26,10 @@ class Example(ViewportPainter):
         super(Example, self).__init__()
 
     def drawRect2D(self, worldPoint, radius = 5):
+        """Draws a 2D rectangle based on a 3D point in a space
+            @param[in] worldPoint which is MPoint 
+            @param[in] radius of the rectangle
+        """
         point = worldPoint
 
         xPtrInit = OpenMaya.MScriptUtil()
@@ -66,7 +78,8 @@ class Example(ViewportPainter):
         self.glFT.glPopAttrib()
 
     def draw(self):
-
+        """The main draw OpenGL method
+        """
         self.glFT.glPushAttrib(OpenMayaRender.MGL_ALL_ATTRIB_BITS) #save all stackable states
         self.view3D.beginGL() #setup port for drawing native OpenGL calls
         self.glFT.glClearDepth(0.0)
@@ -111,7 +124,9 @@ class Example(ViewportPainter):
 
     #Overwritten update method 
     def update(self, *args):
-
+        """
+        A Method that is called for every refresh of Maya viewport
+        """
         if self.userKeyboardEvents.K_Esc:
             self.uninitializeCallback()
             return
