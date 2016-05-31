@@ -2,6 +2,8 @@
 
 This class is an example of a user defined interactive tool, that simplifies a viewport callbacks creation process for drawing OpenGL primitives and filtering user actions.
 
+[![Maya Interactive Tools Demo](https://i.gyazo.com/2beaf7ddd6cb7acaf5181e58efc610db.png)](https://vimeo.com/168770171 "Maya Interactive Tools Demo - Click to Watch!")
+
 ####How it works:
 ViewportPainter class contains two methods that are responsible for initialization and uninitialization of a viewport redrawing callbacks as well as for installing eventFilters for Maya main window. 
 
