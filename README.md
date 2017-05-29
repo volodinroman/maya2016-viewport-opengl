@@ -4,18 +4,18 @@ This class is an example of a user defined interactive tool, that simplifies a v
 
 [![Maya Interactive Tools Demo](https://i.gyazo.com/2beaf7ddd6cb7acaf5181e58efc610db.png)](https://vimeo.com/168770171 "Maya Interactive Tools Demo - Click to Watch!")
 
-####How it works:
+#### How it works:
 ViewportPainter class contains two methods that are responsible for initialization and uninitialization of a viewport redrawing callbacks as well as for installing eventFilters for Maya main window. 
 
 When a viewport callback is initialized it calls "Update" method for every refresh of the view, after the scene is drawn but before any 2d adornments are drawn.
 
 To create your own interactive tool, you need to inherit ViewportPainter class and override "Update" method with your own actions and OpenGL drawing process. 
 
-####Usage:
+#### Usage:
 - download the project files and place them in MAYA_SCRIPT_PATH folder;
 - use the next script to run the example
 
-####Python
+#### Python
 ```
 import example
 example.main()
